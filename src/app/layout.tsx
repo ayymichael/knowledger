@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter as FontSans } from "next/font/google";
+import "./manrope.css";
+import "./nagel.css";
+import "./material-icons.css";
+import "./material-symbols.css";
+import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {

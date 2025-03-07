@@ -7,7 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--fonmt-sans)", ...fontFamily.sans],
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+        manrope: ['"Manrope"', "sans-serif"],
+        nagel: ['"Nagel"', "sans-serif"],
+        "material-icons": ['"Material Icons Round"', "sans-serif"],
+        "material-symbols": ['"Material Symbols Round"', "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

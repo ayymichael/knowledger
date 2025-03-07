@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  db: 
+    image: postgres:latest
+    restart: always
+    container_name: knowledger_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data: 

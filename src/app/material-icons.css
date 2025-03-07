@@ -1,0 +1,29 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+
+@font-face {
+  font-family: 'Material Icons Round';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/static/fonts/material-icons/material-icons-round-v140.woff2') format('woff2');
+}
+
+.material-icons,
+.material-icons-round {
+  direction: ltr;
+  display: inline-block;
+
+  font-family: 'Material Icons Round';
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  text-transform: none;
+  text-rendering: optimizelegibility;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+}

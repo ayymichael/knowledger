@@ -9,7 +9,7 @@ test("Create and delete course", async ({ page }) => {
     .getByRole("textbox", { name: "Description" })
     .fill("Test description");
   await page.getByRole("button", { name: "Create" }).click();
-  await page.getByText("Test courseTest descriptionDelete").click();
+  await page.getByText("Test courseTest descriptionDelete").last().click();
   await page
     .locator("div")
     .filter({ hasText: /^Test courseTest descriptionDelete$/ })

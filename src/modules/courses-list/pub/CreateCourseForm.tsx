@@ -48,7 +48,7 @@ export default function CreateCourseForm({
             createCourseAction(data, revalidatePagePath);
           });
         })}
-        className={cn(className, "space-y-6")}
+        className={cn(className, "space-y-8")}
       >
         <FormField
           name="name"
@@ -76,7 +76,7 @@ export default function CreateCourseForm({
             </FormItem>
           )}
         />
-        <Button disabled={isCreateTransition} type="submit">
+        <Button className="mt-8" disabled={isCreateTransition} type="submit">
           Create
         </Button>
       </form>

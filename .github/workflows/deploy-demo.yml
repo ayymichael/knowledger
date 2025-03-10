@@ -33,4 +33,4 @@ jobs:
           user: ${{ secrets.DEMO_SSH_USERNAME }}
           private_key: ${{ secrets.DEMO_SSH_PRIVATE_KEY }}
           host_fingerprint: ${{ secrets.DEMO_SSH_FINGERPRINT }}
-          command: source ~/.nvm/nvm.sh; echo 'hello world'
+          command: source ~/.nvm/nvm.sh; ~/deploy.sh

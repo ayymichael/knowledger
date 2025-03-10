@@ -28,15 +28,13 @@ jobs:
       - name: SSH Command
         uses: D3rHase/ssh-command-action@v0.2.2
         with:
-          # hostname / IP of the server
           host: ${{ secrets.DEMO_SSH_HOST }}
           user: ${{ secrets.DEMO_SSH_USERNAME }}
           private_key: ${{ secrets.DEMO_SSH_PRIVATE_KEY }}
           host_fingerprint: ${{ secrets.DEMO_SSH_FINGERPRINT }}
           command: source ~/.nvm/nvm.sh; ~/deploy.sh
-
   e2e:
-		needs: deploy
+    needs: deploy
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:

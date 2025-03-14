@@ -17,6 +17,7 @@ export const nextAuthConfig: AuthOptions = {
           user: privateConfig.EMAIL_SERVER_USER,
           pass: privateConfig.EMAIL_SERVER_PASSWORD,
         },
+        connectionTimeout: 120000,
       },
       from: privateConfig.EMAIL_FROM,
     }),

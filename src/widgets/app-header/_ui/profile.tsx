@@ -60,7 +60,7 @@ export function Profile() {
         <DropdownMenuGroup>
           {session.data ? (
             <DropdownMenuItem asChild className="cursor-pointer select-none">
-              <Link href={`/profile/${session.data.user.id}`}>
+              <Link href="/profile/1">
                 <User className="mr-2 h-4 w-4" />
                 <span>Profile</span>
               </Link>

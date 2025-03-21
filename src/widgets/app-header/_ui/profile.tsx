@@ -14,9 +14,9 @@ import { Button } from "@/shared/ui/button";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { useAppSession } from "@/entities/session/use-app-session";
-import { useSignOut } from "@/modules/auth/use-sign-out";
+import { useSignOut } from "@/modules/auth/_vm/use-sign-out";
 import { Skeleton } from "@/shared/ui/skeleton";
-import { SignInButton } from "@/modules/auth/SignInButton";
+import { SignInButton } from "@/modules/auth/sign-in-button";
 
 export function Profile() {
   const session = useAppSession();
@@ -39,7 +39,7 @@ export function Profile() {
               <AvatarImage src={session.data.user.image} />
               <AvatarFallback>
                 {session.data.user.name
-                  ? session.data.user.name.slice(0, 2)
+                  ? session.data.user.name.slice(0, 2).toLocaleUpperCase()
                   : "00"}
               </AvatarFallback>
             </Avatar>

@@ -8,6 +8,11 @@ import EmailProvider from "next-auth/providers/email";
 
 export const nextAuthConfig: AuthOptions = {
   adapter: PrismaAdapter(dbClient) as AuthOptions["adapter"],
+  pages: {
+    signIn: "/auth/sign-in",
+    newUser: "/auth/sign-up",
+    verifyRequest: "/auth/verify-request",
+  },
   providers: compact([
     EmailProvider({
       server: {
@@ -17,7 +22,6 @@ export const nextAuthConfig: AuthOptions = {
           user: privateConfig.EMAIL_SERVER_USER,
           pass: privateConfig.EMAIL_SERVER_PASSWORD,
         },
-        connectionTimeout: 120000,
       },
       from: privateConfig.EMAIL_FROM,
     }),

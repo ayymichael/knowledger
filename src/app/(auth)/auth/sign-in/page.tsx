@@ -1,3 +1,22 @@
-export default function SignIn() {
-  return <div className="container py-10">SignIn</div>;
+import { SignInForm } from '@/modules/auth/sign-in-form.serer';
+import { Card, CardContent, CardHeader } from '@/shared/ui/card';
+
+export default function AuthenticationPage() {
+  return (
+    <div className='container mx-auto relative flex-col w-full items-center justify-center self-center pt-24'>
+      <Card className='max-w-[350px] mx-auto'>
+        <CardHeader className='flex flex-col space-y-2 text-center'>
+          <h1 className='text-2xl font-semibold tracking-tight'>Войти в аккаунт</h1>
+        </CardHeader>
+        <CardContent className='grid gap-4'>
+          <SignInForm />
+          <div className='px-0 text-center text-sm text-muted-foreground'>
+            Нажимая продолжить вы соглашаетесь с
+            <div className='underline underline-offset-4 hover:text-primary'>Пользовательским соглашением</div>и
+            <div className='underline underline-offset-4 hover:text-primary'>Политикой конфиденциальности.</div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
 }

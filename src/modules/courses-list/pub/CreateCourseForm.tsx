@@ -1,21 +1,15 @@
-"use client";
+'use client';
 
-import {
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from "@/shared/ui/form";
-import { Input } from "@/shared/ui/input";
-import { Textarea } from "@/shared/ui/textarea";
-import { useTransition } from "react";
-import { useForm, Form, FormProvider } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import createCourseAction from "../actions";
-import { Button } from "@/shared/ui/button";
-import { cn } from "@/lib/utils";
+import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/shared/ui/form';
+import { Input } from '@/shared/ui/input';
+import { Textarea } from '@/shared/ui/textarea';
+import { useTransition } from 'react';
+import { useForm, Form, FormProvider } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import createCourseAction from '../actions';
+import { Button } from '@/shared/ui/button';
+import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
   name: z.string(),
@@ -33,8 +27,8 @@ export default function CreateCourseForm({
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      description: "",
+      name: '',
+      description: '',
     },
   });
 
@@ -43,40 +37,38 @@ export default function CreateCourseForm({
       <form
         onSubmit={form.handleSubmit((data) => {
           startCreateTransition(async () => {
-            console.log(revalidatePagePath);
-
             createCourseAction(data, revalidatePagePath);
           });
         })}
-        className={cn(className, "space-y-8")}
+        className={cn(className, 'space-y-8')}
       >
         <FormField
-          name="name"
+          name='name'
           control={form.control}
           render={({ field }) => (
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Name" {...field} />
+                <Input placeholder='Name' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
         <FormField
-          name="description"
+          name='description'
           control={form.control}
           render={({ field }) => (
             <FormItem>
               <FormLabel>Description</FormLabel>
               <FormControl>
-                <Textarea placeholder="Description..." {...field} />
+                <Textarea placeholder='Description...' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button className="mt-8" disabled={isCreateTransition} type="submit">
+        <Button className='mt-8' disabled={isCreateTransition} type='submit'>
           Create
         </Button>
       </form>

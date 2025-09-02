@@ -1,4 +1,4 @@
-import { SignInForm } from '@/modules/auth/sign-in-form.serer';
+import { SignInForm } from '@/modules/auth/sign-in-form.server';
 import { Card, CardContent, CardHeader } from '@/shared/ui/card';
 
 export default function AuthenticationPage() {
